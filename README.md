@@ -43,11 +43,11 @@ pip install -r requirements.txt
 
 ### 2. Run the Backend
 ```bash
-python improved_backend.py
+python backend.py
 ```
 
 ### 3. Open Frontend
-Open `improved_index.html` in your browser or serve it with a local server.
+Open `index.html` in your browser or serve it with a local server.
 
 ## 📊 How It Works
 
