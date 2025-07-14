@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Improved Burnout Detection System</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen">
+  <div class="container mx-auto px-4 py-8">
+    <!-- Header -->
+    <div class="text-center mb-8">
+      <h1 class="text-4xl font-bold text-gray-800 mb-2">
+        <i class="fas fa-brain text-blue-600 mr-3"></i>
+        Burnout Detection System
+      </h1>
+      <p class="text-gray-600 text-lg">AI-powered workplace wellness assessment</p>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-4xl mx-auto">
+      <!-- Input Section -->
+      <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4">
+          <i class="fas fa-comment-alt text-green-600 mr-2"></i>
+          Share Your Experience
+        </h2>
+        <p class="text-gray-600 mb-4">
+          Describe how you've been feeling at work recently. Be honest and detailed for the most accurate assessment.
+        </p>
+        
+        <textarea 
+          id="feedbackInput" 
+          class="w-full p-4 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none resize-none"
+          rows="6"
+          placeholder="Example: I've been feeling quite overwhelmed lately with the increased workload. My manager keeps adding more tasks without considering my current capacity. I'm working late most nights and feeling exhausted..."
+        ></textarea>
+        
+        <div class="flex justify-between items-center mt-4">
+          <div class="text-sm text-gray-500">
+            <span id="wordCount">0</span> words
+          </div>
+          <button 
+            id="submitBtn" 
+            class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200 flex items-center"
+          >
+            <i class="fas fa-search mr-2"></i>
+            Analyze Burnout Risk
+          </button>
+        </div>
+      </div>
+
+      <!-- Results Section -->
+      <div id="resultArea" class="hidden">
+        <!-- Risk Level Card -->
+        <div id="riskCard" class="bg-white rounded-xl shadow-lg p-6 mb-6">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-2xl font-semibold">Risk Assessment</h3>
+            <div id="confidenceBadge" class="px-3 py-1 rounded-full text-sm font-medium"></div>
+          </div>
+          
+          <div id="riskLevel" class="text-center mb-6">
+            <!-- Risk level will be inserted here -->
+          </div>
+          
+          <div id="probabilities" class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+            <!-- Probabilities will be inserted here -->
+          </div>
+        </div>
+
+        <!-- Explanation Card -->
+        <div id="explanationCard" class="bg-white rounded-xl shadow-lg p-6 mb-6">
+          <h3 class="text-xl font-semibold text-gray-800 mb-4">
+            <i class="fas fa-lightbulb text-yellow-600 mr-2"></i>
+            Analysis Explanation
+          </h3>
+          <div id="explanationList" class="space-y-2">
+            <!-- Explanations will be inserted here -->
+          </div>
+        </div>
+
+        <!-- Recommendations Card -->
+        <div id="recommendationsCard" class="bg-white rounded-xl shadow-lg p-6">
+          <h3 class="text-xl font-semibold text-gray-800 mb-4">
+            <i class="fas fa-heart text-red-600 mr-2"></i>
+            Personalized Recommendations
+          </h3>
+          <div id="recommendationsList" class="space-y-3">
+            <!-- Recommendations will be inserted here -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Loading State -->
+      <div id="loadingState" class="hidden text-center py-12">
+        <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mb-4"></div>
+        <p class="text-gray-600 text-lg">Analyzing your feedback...</p>
+      </div>
+
+      <!-- Error State -->
+      <div id="errorState" class="hidden bg-red-50 border border-red-200 rounded-lg p-4 text-center">
+        <i class="fas fa-exclamation-triangle text-red-600 text-2xl mb-2"></i>
+        <p id="errorMessage" class="text-red-800"></p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="text-center mt-12 text-gray-500">
+      <p class="text-sm">
+        <i class="fas fa-shield-alt mr-1"></i>
+        Your feedback is analyzed anonymously and securely
+      </p>
+      <p class="text-xs mt-2">
+        This tool is for educational purposes and should not replace professional medical advice
+      </p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html> 
